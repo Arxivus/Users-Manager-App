@@ -1,4 +1,4 @@
-import { Box, Button, Input, Modal, TextField } from '@mui/material'
+import { Box, Button, Modal, TextField } from '@mui/material'
 import './UserEditForm.css'
 import type { User } from '../../types/user'
 import { useState, useEffect } from 'react'
@@ -45,7 +45,7 @@ const UserEditForm = ({ isOpen, editedUser, onFormClose, onUserSave }: FormProps
 
         <Modal
             open={isOpen}
-            onClose={(event, reason) => {
+            onClose={(_, reason) => {
                 if (reason == 'backdropClick') {
                     onFormClose()
                 }

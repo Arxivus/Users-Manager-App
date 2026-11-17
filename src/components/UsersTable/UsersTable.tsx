@@ -16,7 +16,7 @@ const UsersTable = ({ users, editFunction }: UsersTableProps) => {
 
     const displayedUsers = users.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 
-    const handlePageChange = (event: unknown, newPage: number) => {
+    const handlePageChange = (_: unknown, newPage: number) => {
         setPage(newPage)
     }
 
