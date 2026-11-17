@@ -54,7 +54,8 @@ const UserEditForm = ({ isOpen, editedUser, onFormClose, onUserSave }: FormProps
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
-                width: 600,
+                width: '80%',
+                maxWidth: 600,
                 display: 'flex',
                 flexDirection: 'column',
                 gap: '16px',
@@ -72,6 +73,7 @@ const UserEditForm = ({ isOpen, editedUser, onFormClose, onUserSave }: FormProps
                     value={formData.name}
                     onChange={handleFieldChange}
                     fullWidth
+                    required 
                 />
                 <TextField
                     label="Возраст"
@@ -80,6 +82,7 @@ const UserEditForm = ({ isOpen, editedUser, onFormClose, onUserSave }: FormProps
                     value={formData.age}
                     onChange={handleFieldChange}
                     fullWidth
+                    required 
                 />
                 <TextField
                     label="Роль"
@@ -87,6 +90,7 @@ const UserEditForm = ({ isOpen, editedUser, onFormClose, onUserSave }: FormProps
                     value={formData.role}
                     onChange={handleFieldChange}
                     fullWidth
+                    required 
                 />
                 <TextField
                     label="Город"
@@ -94,6 +98,7 @@ const UserEditForm = ({ isOpen, editedUser, onFormClose, onUserSave }: FormProps
                     value={formData.city}
                     onChange={handleFieldChange}
                     fullWidth
+                    required 
                 />
                 <TextField
                     label="О себе"

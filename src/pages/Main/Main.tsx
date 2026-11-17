@@ -31,7 +31,7 @@ const Main = () => {
         } catch (e) {
             alert('Не удалось сохранить пользователя')
         }
-    };
+    }
 
     return (
         <div className='container'>

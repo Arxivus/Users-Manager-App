@@ -36,9 +36,10 @@ const UsersTable = ({ users, editFunction }: UsersTableProps) => {
             }}>
                 <TableHead sx={{ backgroundColor: 'var(--primary-bg)' }}>
                     <TableRow>
-                        <TableCell sx={{ fontWeight: 'bold' }} align="center">№</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold',  display: { xs: 'none', md: 'table-cell' } }} align="center">№</TableCell>
                         <TableCell sx={{ fontWeight: 'bold' }} align="left">Имя пользователя</TableCell>
-                        <TableCell sx={{ fontWeight: 'bold' }} align="center">Роль</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold',  display: { xs: 'none', md: 'table-cell' }}} align="center">Роль</TableCell>
+                        <TableCell sx={{ fontWeight: 'bold',  display: { xs: 'none', md: 'table-cell' } }} align="center">Город</TableCell>
                         <TableCell align="right"></TableCell>
                     </TableRow>
                 </TableHead>
@@ -46,13 +47,14 @@ const UsersTable = ({ users, editFunction }: UsersTableProps) => {
                     {
                         displayedUsers && displayedUsers.map(((user, index) => (
                             <TableRow key={index}>
-                                <TableCell align="center">{index + rowsPerPage * page + 1}</TableCell>
+                                <TableCell align="center" sx={{ display: { xs: 'none', md: 'table-cell' } }}>{index + rowsPerPage * page + 1}</TableCell>
                                 <TableCell align="left">
                                     <Link to={`users/${user.id}`}>
                                         {user.name}
                                     </Link>
                                 </TableCell>
-                                <TableCell align="center">{user.role}</TableCell>
+                                <TableCell align="center" sx={{ display: { xs: 'none', md: 'table-cell' } }}>{user.role}</TableCell>
+                                <TableCell align="center" sx={{ display: { xs: 'none', md: 'table-cell' } }}>{user.city}</TableCell>
                                 <TableCell align="right">
                                     <Button onClick={() => editFunction(user.id)}>Редактировать</Button>
                                 </TableCell>
@@ -62,6 +64,7 @@ const UsersTable = ({ users, editFunction }: UsersTableProps) => {
                 </TableBody>
             </Table>
             <TablePagination
+                component="div" 
                 sx={{
                     border: 'none',
                 }}
